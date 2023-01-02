@@ -1,0 +1,28 @@
+From 76768b26463ce4283746091869f00ff9da2294cd Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Fri, 16 Aug 2019 14:15:42 +0900
+Subject: [PATCH] Reduce SDHCI CMD Timeout
+
+---
+ drivers/mmc/sdhci.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/mmc/sdhci.c b/drivers/mmc/sdhci.c
+index cbc4333..c7afa06 100644
+--- a/drivers/mmc/sdhci.c
++++ b/drivers/mmc/sdhci.c
+@@ -131,7 +131,11 @@ static int sdhci_transfer_data(struct sdhci_host *host, struct mmc_data *data,
+  * increased twice but only if it doesn't exceed global defined maximum.
+  * Each function call will use last timeout value.
+  */
++#if 1 //CRZ_20190816 reduce SDHCI CMD Timeout 
++#define SDHCI_CMD_MAX_TIMEOUT			100
++#else
+ #define SDHCI_CMD_MAX_TIMEOUT			3200
++#endif
+ #define SDHCI_CMD_DEFAULT_TIMEOUT		100
+ #define SDHCI_READ_STATUS_TIMEOUT		1000
+ 
+-- 
+2.7.4
+

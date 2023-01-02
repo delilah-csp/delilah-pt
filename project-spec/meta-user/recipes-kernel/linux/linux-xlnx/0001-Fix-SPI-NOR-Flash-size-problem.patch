@@ -1,0 +1,31 @@
+From 1197cc38f0098d45d88a40bea91b6f5b12bc7244 Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Thu, 7 Nov 2019 16:12:57 +0900
+Subject: [PATCH] Fix SPI NOR Flash size problem
+
+---
+ drivers/mtd/spi-nor/spi-nor.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ mode change 100644 => 100755 drivers/mtd/spi-nor/spi-nor.c
+
+diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
+old mode 100644
+new mode 100755
+index da90c25..4640af4
+--- a/drivers/mtd/spi-nor/spi-nor.c
++++ b/drivers/mtd/spi-nor/spi-nor.c
+@@ -3401,6 +3401,11 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+ 					info->sector_size <<= nor->shift;
+ 					info->page_size <<= nor->shift;
+ 					mtd->size <<= nor->shift;
++/* CRZ_20191107 Fix SPI NOR Flash size problem */
++					if(!strcmp(info->name, "w25m512jv"))
++					{
++						mtd->size <<= nor->shift;
++					}
+ 					nor->isparallel = 1;
+ 					nor->isstacked = 0;
+ 					nor->spi->master->flags |=
+-- 
+2.7.4
+

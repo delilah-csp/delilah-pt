@@ -1,0 +1,3 @@
+[submodule "project-spec/meta-user/recipes-apps/delilah"]
+	path = project-spec/meta-user/recipes-apps/delilah
+	url = git@github.com:delilah-csp/delilah.git

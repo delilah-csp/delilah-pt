@@ -1,0 +1,38 @@
+From d7a215fc9b6485a8c791a0103f119b264c6724e1 Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Fri, 1 Nov 2019 16:33:55 +0900
+Subject: [PATCH] Remove PCIe compile error.
+
+---
+ drivers/pci/controller/pcie-xdma-pl.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/drivers/pci/controller/pcie-xdma-pl.c b/drivers/pci/controller/pcie-xdma-pl.c
+index c9f9784..f15593c 100644
+--- a/drivers/pci/controller/pcie-xdma-pl.c
++++ b/drivers/pci/controller/pcie-xdma-pl.c
+@@ -757,12 +757,21 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
+ 		return err;
+ 	}
+ 
++#if 1 //CRZ_20191101 remove compile error
++	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
++					       &iobase);
++	if (err) {
++		dev_err(dev, "Getting bridge resources failed\n");
++		return err;
++	}
++#else
+ 	err = of_pci_get_host_bridge_resources(dev->of_node, 0, 0xff, &res,
+ 					       &iobase);
+ 	if (err) {
+ 		dev_err(dev, "Getting bridge resources failed\n");
+ 		return err;
+ 	}
++#endif
+ 
+ 	err = devm_request_pci_bus_resources(dev, &res);
+ 	if (err)
+-- 
+2.7.4
+

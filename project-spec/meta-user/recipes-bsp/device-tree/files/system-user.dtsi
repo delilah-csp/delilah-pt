@@ -1,0 +1,335 @@
+/include/ "system-conf.dtsi"
+/ {
+	/delete-node/ gpio-keys;
+	/delete-node/ leds;
+};
+
+/ {
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		delilah0: delilah@0 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x10000000 0x0 0x02000000>;
+			label = "delilah0";
+		};
+		delilah1: delilah@1 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x12000000 0x0 0x800000>;
+			label = "delilah1";
+		};
+		delilah2: delilah@2 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x12800000 0x0 0x800000>;
+			label = "delilah2";
+		};
+		delilah3: delilah@3 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x13000000 0x0 0x800000>;
+			label = "delilah3";
+		};
+		delilah4: delilah@4 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x13800000 0x0 0x800000>;
+			label = "delilah4";
+		};
+		delilah5: delilah@5 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x14000000 0x0 0x800000>;
+			label = "delilah5";
+		};
+		delilah6: delilah@6 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x14800000 0x0 0x800000>;
+			label = "delilah6";
+		};
+		delilah7: delilah@7 {
+			compatible = "shared-dma-pool";
+                        reusable;
+			reg = <0x0 0x15000000 0x0 0x800000>;
+			label = "delilah7";
+		};
+		delilah8: delilah@8 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x15800000 0x0 0x800000>;
+			label = "delilah8";
+		};
+		delilah9: delilah@9 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x16000000 0x0 0x8000000>;
+			label = "delilah9";
+		};
+		delilah10: delilah@10 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x1e000000 0x0 0x8000000>;
+			label = "delilah10";
+		};
+		delilah11: delilah@11 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x26000000 0x0 0x8000000>;
+			label = "delilah11";
+		};
+		delilah12: delilah@12 {
+			compatible = "shared-dma-pool";
+                        reusable;
+			reg = <0x0 0x2e000000 0x0 0x8000000>;
+			label = "delilah12";
+		};
+		cma0: cma0@0 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x08000000 0x0 0x08000000>;
+			linux,cma-default;
+		};
+	};
+	udmabuf0@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_bar0";
+		size = <0x0 0x02000000>; // 32 MiB
+		memory-region = <&delilah0>;
+		sync-mode = <2>;
+	};
+	udmabuf1@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog0";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah1>;
+		sync-mode = <2>;
+	};
+	udmabuf2@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog1";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah2>;
+		sync-mode = <2>;
+	};
+	udmabuf3@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog2";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah3>;
+		sync-mode = <2>;
+	};
+	udmabuf4@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog3";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah4>;
+		sync-mode = <2>;
+	};
+	udmabuf5@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog4";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah5>;
+		sync-mode = <2>;
+	};
+	udmabuf6@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog5";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah6>;
+		sync-mode = <2>;
+	};
+	udmabuf7@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog6";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah7>;
+		sync-mode = <2>;
+	};
+	udmabuf8@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_prog7";
+		size = <0x0 0x800000>; // 8 MiB
+		memory-region = <&delilah8>;
+		sync-mode = <2>;
+	};
+	udmabuf9@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_data0";
+		size = <0x0 0x8000000>; // 128 MiB
+		memory-region = <&delilah9>;
+		sync-mode = <2>;
+	};
+	udmabuf10@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_data1";
+		size = <0x0 0x8000000>; // 128 MiB
+		memory-region = <&delilah10>;
+		sync-mode = <2>;
+	};
+	udmabuf11@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_data2";
+		size = <0x0 0x8000000>; // 128 MiB
+		memory-region = <&delilah11>;
+		sync-mode = <2>;
+	};
+	udmabuf12@0 {
+		compatible = "ikwzm,u-dma-buf";
+		device-name = "delilah_data3";
+		size = <0x0 0x8000000>; // 128 MiB
+		memory-region = <&delilah12>;
+		sync-mode = <2>;
+	};
+};
+
+&qspi {
+	has-io-mode;
+};
+
+&sdhci1 {
+	disable-wp;
+};
+
+&gem3 {
+	phy-handle = <&phy0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_gem3_default>;
+	/delete-node/ phy@c;
+	phy0: phy@0 {
+		reg = <0x0>;
+		ti,rx-internal-delay = <0x8>;
+		ti,tx-internal-delay = <0xa>;
+		ti,fifo-depth = <0x1>;
+		ti,rxctrl-strap-worka;
+	};
+};
+
+&i2c0 {
+	/delete-node/ gpio@20;
+	/delete-node/ gpio@21;
+	/delete-node/ i2c-mux@75;
+};
+
+&i2c1 {
+	/delete-node/ i2c-mux@74;
+	/delete-node/ i2c-mux@75;
+	eeprom: eeprom@5c {
+		compatible = "atmel,24mac402";
+		reg = <0x5c>;
+	};
+};
+
+&pinctrl0 {
+	/delete-node/ usb0-default;
+	/delete-node/ can1-default;
+
+	pinctrl_gpio_default: gpio-default {
+		mux-sw {
+			function = "gpio0";
+			groups = "gpio0_35_grp", "gpio0_36_grp", "gpio0_37_grp", "gpio0_38_grp", "gpio0_39_grp", "gpio0_40_grp", "gpio0_41_grp", "gpio0_42_grp", "gpio0_43_grp", "gpio0_44_grp";
+		};
+
+		conf-sw {
+			groups = "gpio0_35_grp", "gpio0_36_grp", "gpio0_37_grp", "gpio0_38_grp", "gpio0_39_grp", "gpio0_40_grp", "gpio0_41_grp", "gpio0_42_grp", "gpio0_43_grp", "gpio0_44_grp";
+			slew-rate = <1>;
+			io-standard = <1>;
+		};
+
+		conf-pull-up {
+			pins = "MIO35", "MIO36", "MIO40", "MIO41";
+			bias-pull-up;
+		};
+
+		conf-pull-down {
+			pins = "MIO39", "MIO44";
+			bias-pull-down;
+		};
+
+		conf-pull-none {
+			pins = "MIO37", "MIO38", "MIO42", "MIO43";
+			bias-disable;
+		};
+
+		/delete-node/ mux-msp;
+		/delete-node/ conf-msp;
+
+	};
+
+	pinctrl_sdhci1_default: sdhci1-default {
+		mux {
+			groups = "sdio1_2_grp";
+		};
+
+		conf {
+			groups = "sdio1_2_grp";
+		};
+
+		/delete-node/ mux-wp;
+		/delete-node/ conf-wp;
+	};
+};
+
+&can1 {
+	status = "disabled";
+	/delete-property/ pinctrl-0;
+};
+
+&usb0 {
+	/delete-property/ pinctrl-0;
+};
+
+	/delete-node/ &xdma_0;
+	/delete-node/ &xdma_1;
+  
+	&amba_pl {
+
+		xdma_0: axi-pcie@0400000000 {
+			#address-cells = <3>;
+			#interrupt-cells = <1>;
+			#size-cells = <2>;
+			clock-names = "sys_clk", "sys_clk_gt";
+			clocks = <&misc_clk_0>, <&misc_clk_0>;
+			compatible = "xlnx,xdma-host-3.00";
+			device_type = "pci";
+			interrupt-map = <0 0 0 1 &pcie_intc_0 1>, <0 0 0 2 &pcie_intc_0 2>, <0 0 0 3 &pcie_intc_0 3>, <0 0 0 4 &pcie_intc_0 4>;
+			interrupt-map-mask = <0 0 0 7>;
+			interrupt-names = "misc", "msi0", "msi1";
+			interrupt-parent = <&gic>;
+			interrupts = <0 89 4>, <0 91 4>, <0 92 4>;
+			ranges = <0x02000000 0x00000000 0xA0000000 0x00000000 0xA0000000 0x00000000 0x08000000>;
+			reg = <0x00000004 0x00000000 0x0 0x20000000>;
+			pcie_intc_0: interrupt-controller {
+				#address-cells = <0>;
+				#interrupt-cells = <1>;
+				interrupt-controller ;
+			};
+		};
+    
+		xdma_1: axi-pcie@0500000000 {
+			#address-cells = <3>;
+			#interrupt-cells = <1>;
+			#size-cells = <2>;
+			clock-names = "sys_clk", "sys_clk_gt";
+			clocks = <&misc_clk_0>, <&misc_clk_0>;
+			compatible = "xlnx,xdma-host-3.00";
+			device_type = "pci";
+			interrupt-map = <0 0 0 1 &pcie_intc_1 1>, <0 0 0 2 &pcie_intc_1 2>, <0 0 0 3 &pcie_intc_1 3>, <0 0 0 4 &pcie_intc_1 4>;
+			interrupt-map-mask = <0 0 0 7>;
+			interrupt-names = "misc", "msi0", "msi1";
+			interrupt-parent = <&gic>;
+			interrupts = <0 90 4>, <0 93 4>, <0 94 4>;
+			ranges = <0x02000000 0x00000000 0xB0000000 0x00000000 0xB0000000 0x00000000 0x08000000>;
+			reg = <0x00000005 0x00000000 0x0 0x20000000>;
+			pcie_intc_1: interrupt-controller {
+				#address-cells = <0>;
+				#interrupt-cells = <1>;
+				interrupt-controller ;
+			};
+		};
+	};

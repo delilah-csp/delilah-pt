@@ -1,0 +1,25 @@
+From cb8f009bd0eb848bb1f8b48127ffce981ebe2a23 Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Fri, 1 Nov 2019 16:47:33 +0900
+Subject: [PATCH] Remove PCIe compile error.
+
+---
+ drivers/pci/controller/pcie-xdma-pl.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/pci/controller/pcie-xdma-pl.c b/drivers/pci/controller/pcie-xdma-pl.c
+index f15593c..113c78c 100644
+--- a/drivers/pci/controller/pcie-xdma-pl.c
++++ b/drivers/pci/controller/pcie-xdma-pl.c
+@@ -22,6 +22,8 @@
+ #include <linux/platform_device.h>
+ #include <linux/irqchip/chained_irq.h>
+ 
++#include "../pci.h"
++
+ /* Register definitions */
+ #define XILINX_PCIE_REG_VSEC		0x0000012c
+ #define XILINX_PCIE_REG_BIR		0x00000130
+-- 
+2.7.4
+

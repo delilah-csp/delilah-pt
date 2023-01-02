@@ -1,0 +1,30 @@
+From e733547cb71043793d8dff88c64cc186297fd7fd Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Fri, 1 Nov 2019 14:19:39 +0900
+Subject: [PATCH] Boot for DAISY
+
+---
+ lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
+index 2cdfcf2..19a7029 100644
+--- a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
++++ b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
+@@ -365,11 +365,13 @@ u32 XFsbl_Initialize(XFsblPs * FsblInstancePtr)
+ 		}
+ #endif
+ 
++#if 0 //CRZ_20191101 for DAISY boot
+ 	/* Do board specific initialization if any */
+ 	Status = XFsbl_BoardInit();
+ 	if (XFSBL_SUCCESS != Status) {
+ 		goto END;
+ 	}
++#endif
+ 
+ 	/**
+ 	 * Validate the reset reason
+-- 
+2.7.4
+

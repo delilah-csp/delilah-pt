@@ -1,0 +1,48 @@
+From 06dde93fee60af451a09bda093147c12f2a1e115 Mon Sep 17 00:00:00 2001
+From: Choe Hong Gi <hgchoe@crz-tech.com>
+Date: Fri, 13 Dec 2019 15:14:53 +0900
+Subject: [PATCH] Control M.2 PWR&RST through GPIO.
+
+---
+ board/xilinx/zynqmp/zynqmp.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/board/xilinx/zynqmp/zynqmp.c b/board/xilinx/zynqmp/zynqmp.c
+index 58c1c0b..fc4cd0b 100644
+--- a/board/xilinx/zynqmp/zynqmp.c
++++ b/board/xilinx/zynqmp/zynqmp.c
+@@ -363,6 +363,31 @@ int board_init(void)
+ 	puts("Watchdog: Started\n");
+ #endif
+ 
++//CRZ_20191213 to control M.2 Power and Reset.
++#define GPIO_M2_1_PWR_ADDR (0xA8000000)
++#define GPIO_M2_2_PWR_ADDR (0xA8000008)
++
++#define GPIO_M2_1_RST_ADDR (0xA8001000)
++#define GPIO_M2_2_RST_ADDR (0xA8001008)
++
++	{
++		__raw_writel(0, GPIO_M2_1_PWR_ADDR);
++		__raw_writel(0, GPIO_M2_2_PWR_ADDR);
++
++		__raw_writel(0, GPIO_M2_1_RST_ADDR);
++		__raw_writel(0, GPIO_M2_2_RST_ADDR);
++
++		mdelay(100);
++
++		__raw_writel(0xFFFFFFFF, GPIO_M2_1_PWR_ADDR);
++		__raw_writel(0xFFFFFFFF, GPIO_M2_2_PWR_ADDR);
++
++		mdelay(200);
++
++		__raw_writel(0xFFFFFFFF, GPIO_M2_1_RST_ADDR);
++		__raw_writel(0xFFFFFFFF, GPIO_M2_2_RST_ADDR);
++	}
++
+ 	return 0;
+ }
+ 
+-- 
+2.7.4
+

@@ -1,0 +1,14 @@
+*/*/config.old
+*/*/rootfs_config.old
+*/*/.metadata
+build/
+pre-built/linux
+images/linux
+.petalinux/*
+!.petalinux/metadata
+!project-spec/**
+*.o
+*.jou
+*.log
+*.a
+*.elf
