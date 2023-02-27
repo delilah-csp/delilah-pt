@@ -44,17 +44,15 @@ IMAGE_INSTALL = "\
 		pciutils-ids \
 		run-postinsts \
 		udev-extraconf \
-		gdb \
-		gdb-dev \
-		gdbserver \
-		gdb-dbg \
 		packagegroup-core-boot \
 		packagegroup-core-ssh-dropbear \
 		tcf-agent \
 		watchdog-init \
 		bridge-utils \
 		hellopm \
-		delilah \
-		udmabuf \
+		dimm-test \
+		myapp \
+		nvme-cli \
+		fio \
 		"
 EXTRA_USERS_PARAMS = "usermod -P root root;"

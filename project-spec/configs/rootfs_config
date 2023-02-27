@@ -2416,10 +2416,10 @@ CONFIG_udev-extraconf=y
 #
 # gdb 
 #
-CONFIG_gdb=y
-CONFIG_gdb-dev=y
-CONFIG_gdbserver=y
-CONFIG_gdb-dbg=y
+# CONFIG_gdb is not set
+# CONFIG_gdb-dev is not set
+# CONFIG_gdbserver is not set
+# CONFIG_gdb-dbg is not set
 
 #
 # glib-2.0 
@@ -4192,6 +4192,10 @@ CONFIG_imagefeature-hwcodecs=y
 # apps 
 #
 CONFIG_delilah=y
+CONFIG_dimm-test=y
+# CONFIG_gpio-demo is not set
+# CONFIG_myapp is not set
+# CONFIG_peekpoke is not set
 
 #
 # modules 
@@ -4201,6 +4205,12 @@ CONFIG_udmabuf=y
 #
 # user packages 
 #
+
+#
+# utils
+#
+CONFIG_nvme-cli=y
+CONFIG_fio=y
 
 #
 # PetaLinux RootFS Settings
