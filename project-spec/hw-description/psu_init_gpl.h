@@ -2580,8 +2580,6 @@
 #define DDR_PHY_DX8SL4DXCTL2_OFFSET                                                0XFD08152C
 #undef DDR_PHY_DX8SL4IOCR_OFFSET 
 #define DDR_PHY_DX8SL4IOCR_OFFSET                                                  0XFD081530
-#undef DDR_PHY_DX8SLBPLLCR0_OFFSET 
-#define DDR_PHY_DX8SLBPLLCR0_OFFSET                                                0XFD0817C4
 #undef DDR_PHY_DX8SLBDQSCTL_OFFSET 
 #define DDR_PHY_DX8SLBDQSCTL_OFFSET                                                0XFD0817DC
 
@@ -22888,136 +22886,6 @@
 #define DDR_PHY_DX8SL4IOCR_DXRXM_MASK                          0x000007FFU
 
 /*
-* PLL Bypass
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_PLLBYP_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLBYP_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLBYP_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_PLLBYP_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_PLLBYP_SHIFT                      31
-#define DDR_PHY_DX8SLBPLLCR0_PLLBYP_MASK                       0x80000000U
-
-/*
-* PLL Reset
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_PLLRST_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLRST_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLRST_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_PLLRST_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_PLLRST_SHIFT                      30
-#define DDR_PHY_DX8SLBPLLCR0_PLLRST_MASK                       0x40000000U
-
-/*
-* PLL Power Down
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_PLLPD_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLPD_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_PLLPD_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_PLLPD_DEFVAL                      0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_PLLPD_SHIFT                       29
-#define DDR_PHY_DX8SLBPLLCR0_PLLPD_MASK                        0x20000000U
-
-/*
-* Reference Stop Mode
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_RSTOPM_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_RSTOPM_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_RSTOPM_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_RSTOPM_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_RSTOPM_SHIFT                      28
-#define DDR_PHY_DX8SLBPLLCR0_RSTOPM_MASK                       0x10000000U
-
-/*
-* PLL Frequency Select
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_FRQSEL_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_FRQSEL_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_FRQSEL_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_FRQSEL_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_FRQSEL_SHIFT                      24
-#define DDR_PHY_DX8SLBPLLCR0_FRQSEL_MASK                       0x0F000000U
-
-/*
-* Relock Mode
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_RLOCKM_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_RLOCKM_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_RLOCKM_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_RLOCKM_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_RLOCKM_SHIFT                      23
-#define DDR_PHY_DX8SLBPLLCR0_RLOCKM_MASK                       0x00800000U
-
-/*
-* Charge Pump Proportional Current Control
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_CPPC_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_CPPC_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_CPPC_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_CPPC_DEFVAL                       0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_CPPC_SHIFT                        17
-#define DDR_PHY_DX8SLBPLLCR0_CPPC_MASK                         0x007E0000U
-
-/*
-* Charge Pump Integrating Current Control
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_CPIC_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_CPIC_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_CPIC_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_CPIC_DEFVAL                       0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_CPIC_SHIFT                        13
-#define DDR_PHY_DX8SLBPLLCR0_CPIC_MASK                         0x0001E000U
-
-/*
-* Gear Shift
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_GSHIFT_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_GSHIFT_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_GSHIFT_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_GSHIFT_DEFVAL                     0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_GSHIFT_SHIFT                      12
-#define DDR_PHY_DX8SLBPLLCR0_GSHIFT_MASK                       0x00001000U
-
-/*
-* Reserved. Return zeroes on reads.
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_DEFVAL              0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_SHIFT               9
-#define DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9_MASK                0x00000E00U
-
-/*
-* Analog Test Enable (ATOEN)
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_ATOEN_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_ATOEN_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_ATOEN_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_ATOEN_DEFVAL                      0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_ATOEN_SHIFT                       8
-#define DDR_PHY_DX8SLBPLLCR0_ATOEN_MASK                        0x00000100U
-
-/*
-* Analog Test Control
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_ATC_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_ATC_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_ATC_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_ATC_DEFVAL                        0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_ATC_SHIFT                         4
-#define DDR_PHY_DX8SLBPLLCR0_ATC_MASK                          0x000000F0U
-
-/*
-* Digital Test Control
-*/
-#undef DDR_PHY_DX8SLBPLLCR0_DTC_DEFVAL 
-#undef DDR_PHY_DX8SLBPLLCR0_DTC_SHIFT 
-#undef DDR_PHY_DX8SLBPLLCR0_DTC_MASK 
-#define DDR_PHY_DX8SLBPLLCR0_DTC_DEFVAL                        0x00000000
-#define DDR_PHY_DX8SLBPLLCR0_DTC_SHIFT                         0
-#define DDR_PHY_DX8SLBPLLCR0_DTC_MASK                          0x0000000FU
-
-/*
 * Reserved. Return zeroes on reads.
 */
 #undef DDR_PHY_DX8SLBDQSCTL_RESERVED_31_25_DEFVAL 
@@ -33856,10 +33724,14 @@
 #define AFIFM2_AFIFM_RDCTRL_OFFSET                                                 0XFD380000
 #undef AFIFM3_AFIFM_RDCTRL_OFFSET 
 #define AFIFM3_AFIFM_RDCTRL_OFFSET                                                 0XFD390000
+#undef AFIFM4_AFIFM_RDCTRL_OFFSET 
+#define AFIFM4_AFIFM_RDCTRL_OFFSET                                                 0XFD3A0000
 #undef AFIFM2_AFIFM_WRCTRL_OFFSET 
 #define AFIFM2_AFIFM_WRCTRL_OFFSET                                                 0XFD380014
 #undef AFIFM3_AFIFM_WRCTRL_OFFSET 
 #define AFIFM3_AFIFM_WRCTRL_OFFSET                                                 0XFD390014
+#undef AFIFM4_AFIFM_WRCTRL_OFFSET 
+#define AFIFM4_AFIFM_WRCTRL_OFFSET                                                 0XFD3A0014
 
 /*
 * AF_FM0 block level reset
@@ -33978,6 +33850,17 @@
 #define AFIFM3_AFIFM_RDCTRL_FABRIC_WIDTH_MASK                  0x00000003U
 
 /*
+* Configures the Read Channel Fabric interface width. 2'b11 : Reserved 2'b
+    * 10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+*/
+#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_DEFVAL 
+#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_SHIFT 
+#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_MASK 
+#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
+#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_SHIFT                 0
+#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_MASK                  0x00000003U
+
+/*
 * Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
     * b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
 */
@@ -33998,6 +33881,17 @@
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT                 0
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_MASK                  0x00000003U
+
+/*
+* Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
+    * b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+*/
+#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL 
+#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT 
+#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_MASK 
+#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
+#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT                 0
+#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_MASK                  0x00000003U
 #undef GPIO_MASK_DATA_5_MSW_OFFSET 
 #define GPIO_MASK_DATA_5_MSW_OFFSET                                                0XFF0A002C
 #undef GPIO_DIRM_5_OFFSET 

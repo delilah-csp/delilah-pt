@@ -1,0 +1,7 @@
+label: dos
+label-id: 0x00000000
+device: /dev/$DRIVE
+unit: sectors
+
+/dev/$DRIVE1 : start=        2048, size=     2097152, type=c, bootable
+/dev/$DRIVE2 : start=     2099200, size=    13660160, type=83

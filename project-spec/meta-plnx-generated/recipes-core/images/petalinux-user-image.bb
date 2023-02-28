@@ -50,8 +50,9 @@ IMAGE_INSTALL = "\
 		watchdog-init \
 		bridge-utils \
 		hellopm \
+		delilah \
 		dimm-test \
-		myapp \
+		udmabuf \
 		nvme-cli \
 		fio \
 		"

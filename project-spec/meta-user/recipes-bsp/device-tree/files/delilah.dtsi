@@ -9,13 +9,6 @@
         #size-cells = <2>;
         ranges;
 
-        cma: cma@0 {
-            compatible = "shared-dma-pool";
-            reusable;
-            reg = <0x0 0x8000000 0x0 0x8000000>;
-            linux,cma-default;
-        };
-
         delilah_bar: delilah@0 {
             compatible = "shared-dma-pool";
             reusable;
@@ -107,6 +100,17 @@
             label = "delilah_d3";
         };
 
+        delilah_d4: delilah@d4 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x10 0x24000000 0x0 0x8000000>;
+            label = "delilah_d4";
+        };
+
+        ddr_rest {
+            reg = <0x10 0x2c000000 0x3 0xdc000000>;
+        };
+
     };
 
     udma_bar {
@@ -124,6 +128,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p0>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p1 {
@@ -132,6 +137,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p1>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p2 {
@@ -140,6 +146,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p2>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p3 {
@@ -148,6 +155,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p3>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p4 {
@@ -156,6 +164,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p4>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p5 {
@@ -164,6 +173,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p5>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p6 {
@@ -172,6 +182,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p6>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_p7 {
@@ -180,6 +191,7 @@
         size = <0x0 0x800000>;
         memory-region = <&delilah_p7>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_d0 {
@@ -188,6 +200,7 @@
         size = <0x0 0x8000000>;
         memory-region = <&delilah_d0>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_d1 {
@@ -196,6 +209,7 @@
         size = <0x0 0x8000000>;
         memory-region = <&delilah_d1>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_d2 {
@@ -204,6 +218,7 @@
         size = <0x0 0x8000000>;
         memory-region = <&delilah_d2>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
     udma_d3 {
@@ -212,6 +227,7 @@
         size = <0x0 0x8000000>;
         memory-region = <&delilah_d3>;
         sync-mode = <1>;
+        dma-mask = <64>;
     };
 
 };

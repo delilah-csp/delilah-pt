@@ -12,3 +12,5 @@ images/linux
 *.log
 *.a
 *.elf
+components
+project-spec/configs/*.old

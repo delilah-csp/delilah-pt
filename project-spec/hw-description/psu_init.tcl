@@ -4663,11 +4663,11 @@ set psu_ddr_init_data {
 		# Register : GPR1 @ 0XFD0800C4</p>
 
 		# General Purpose Register 1
-		# PSU_DDR_PHY_GPR1_GPR1                                                           0xde
+		# PSU_DDR_PHY_GPR1_GPR1                                                           0xe0
 
 		# General Purpose Register 1
-		#(OFFSET, MASK, VALUE)      (0XFD0800C4, 0xFFFFFFFFU ,0x000000DEU)  */
-    mask_write 0XFD0800C4 0xFFFFFFFF 0x000000DE
+		#(OFFSET, MASK, VALUE)      (0XFD0800C4, 0xFFFFFFFFU ,0x000000E0U)  */
+    mask_write 0XFD0800C4 0xFFFFFFFF 0x000000E0
 		# Register : DCR @ 0XFD080100</p>
 
 		# DDR4 Gear Down Timing.
@@ -7284,7 +7284,7 @@ set psu_ddr_init_data {
 		# PSU_DDR_PHY_DX4GCR3_WDLVT                                                       0x0
 
 		# Write Leveling LCDL Delay VT Compensation
-		# PSU_DDR_PHY_DX4GCR3_WLLVT                                                       0x1
+		# PSU_DDR_PHY_DX4GCR3_WLLVT                                                       0x0
 
 		# Reserved. Returns zeroes on reads.
 		# PSU_DDR_PHY_DX4GCR3_RESERVED_23_22                                              0x0
@@ -7323,8 +7323,8 @@ set psu_ddr_init_data {
 		# PSU_DDR_PHY_DX4GCR3_RESERVED_1_0                                                0x0
 
 		# DATX8 n General Configuration Register 3
-		#(OFFSET, MASK, VALUE)      (0XFD080B0C, 0xFFFFFFFFU ,0x0129A4A4U)  */
-    mask_write 0XFD080B0C 0xFFFFFFFF 0x0129A4A4
+		#(OFFSET, MASK, VALUE)      (0XFD080B0C, 0xFFFFFFFFU ,0x0029A4A4U)  */
+    mask_write 0XFD080B0C 0xFFFFFFFF 0x0029A4A4
 		# Register : DX4GCR4 @ 0XFD080B10</p>
 
 		# Byte lane VREF IOM (Used only by D4MU IOs)
@@ -9635,50 +9635,6 @@ set psu_ddr_init_data {
 		# DATX8 0-1 I/O Configuration Register
 		#(OFFSET, MASK, VALUE)      (0XFD081530, 0xFFFFFFFFU ,0x70400000U)  */
     mask_write 0XFD081530 0xFFFFFFFF 0x70400000
-		# Register : DX8SLbPLLCR0 @ 0XFD0817C4</p>
-
-		# PLL Bypass
-		# PSU_DDR_PHY_DX8SLBPLLCR0_PLLBYP                                                 0x0
-
-		# PLL Reset
-		# PSU_DDR_PHY_DX8SLBPLLCR0_PLLRST                                                 0x0
-
-		# PLL Power Down
-		# PSU_DDR_PHY_DX8SLBPLLCR0_PLLPD                                                  0x0
-
-		# Reference Stop Mode
-		# PSU_DDR_PHY_DX8SLBPLLCR0_RSTOPM                                                 0x0
-
-		# PLL Frequency Select
-		# PSU_DDR_PHY_DX8SLBPLLCR0_FRQSEL                                                 0x2
-
-		# Relock Mode
-		# PSU_DDR_PHY_DX8SLBPLLCR0_RLOCKM                                                 0x0
-
-		# Charge Pump Proportional Current Control
-		# PSU_DDR_PHY_DX8SLBPLLCR0_CPPC                                                   0x9
-
-		# Charge Pump Integrating Current Control
-		# PSU_DDR_PHY_DX8SLBPLLCR0_CPIC                                                   0x0
-
-		# Gear Shift
-		# PSU_DDR_PHY_DX8SLBPLLCR0_GSHIFT                                                 0x0
-
-		# Reserved. Return zeroes on reads.
-		# PSU_DDR_PHY_DX8SLBPLLCR0_RESERVED_11_9                                          0x0
-
-		# Analog Test Enable (ATOEN)
-		# PSU_DDR_PHY_DX8SLBPLLCR0_ATOEN                                                  0x0
-
-		# Analog Test Control
-		# PSU_DDR_PHY_DX8SLBPLLCR0_ATC                                                    0x0
-
-		# Digital Test Control
-		# PSU_DDR_PHY_DX8SLBPLLCR0_DTC                                                    0x0
-
-		# DAXT8 0-8 PLL Control Register 0
-		#(OFFSET, MASK, VALUE)      (0XFD0817C4, 0xFFFFFFFFU ,0x02120000U)  */
-    mask_write 0XFD0817C4 0xFFFFFFFF 0x02120000
 		# Register : DX8SLbDQSCTL @ 0XFD0817DC</p>
 
 		# Reserved. Return zeroes on reads.
@@ -14734,6 +14690,15 @@ set psu_afi_config {
 		# Read Channel Control Register
 		#(OFFSET, MASK, VALUE)      (0XFD390000, 0x00000003U ,0x00000000U)  */
     mask_write 0XFD390000 0x00000003 0x00000000
+		# Register : AFIFM_RDCTRL @ 0XFD3A0000</p>
+
+		# Configures the Read Channel Fabric interface width. 2'b11 : Reserved 2'b
+    # 10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH                                            0x0
+
+		# Read Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD3A0000, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD3A0000 0x00000003 0x00000000
 		# Register : AFIFM_WRCTRL @ 0XFD380014</p>
 
 		# Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
@@ -14752,6 +14717,15 @@ set psu_afi_config {
 		# Write Channel Control Register
 		#(OFFSET, MASK, VALUE)      (0XFD390014, 0x00000003U ,0x00000000U)  */
     mask_write 0XFD390014 0x00000003 0x00000000
+		# Register : AFIFM_WRCTRL @ 0XFD3A0014</p>
+
+		# Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
+    # b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH                                            0x0
+
+		# Write Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD3A0014, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD3A0014 0x00000003 0x00000000
 }
 
 set psu_ps_pl_reset_config_data {

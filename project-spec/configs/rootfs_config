@@ -4193,9 +4193,6 @@ CONFIG_imagefeature-hwcodecs=y
 #
 CONFIG_delilah=y
 CONFIG_dimm-test=y
-# CONFIG_gpio-demo is not set
-# CONFIG_myapp is not set
-# CONFIG_peekpoke is not set
 
 #
 # modules 
@@ -4207,10 +4204,13 @@ CONFIG_udmabuf=y
 #
 
 #
-# utils
+# utils 
 #
 CONFIG_nvme-cli=y
 CONFIG_fio=y
+# CONFIG_gpio-demo is not set
+# CONFIG_myapp is not set
+# CONFIG_peekpoke is not set
 
 #
 # PetaLinux RootFS Settings
