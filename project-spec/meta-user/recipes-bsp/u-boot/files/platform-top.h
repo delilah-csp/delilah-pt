@@ -26,8 +26,5 @@
 
 /* CRZ_20190809 Add 3 lines */
 #define CONFIG_SYS_AUTOLOAD "yes"
+#define CONFIG_BOOTDELAY 1
 #define CONFIG_NET_RETRY_COUNT 0
-
-/* ECC INIT */
-#define CONFIG_PREBOOT	"echo U-BOOT for daisy; setenv preboot; echo; dhcp; echo Run this snippet to initialise ECC: mw.q 0x1000000000 0xdeadbeefdeadbeef 0x80000000"
-#define CONFIG_BOOTDELAY 10
