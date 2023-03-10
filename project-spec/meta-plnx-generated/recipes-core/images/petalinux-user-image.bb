@@ -7,6 +7,7 @@ inherit extrausers
 COMMON_FEATURES = "\
 		ssh-server-dropbear \
 		hwcodecs \
+		debug-tweaks \
 		"
 IMAGE_LINGUAS = " "
 
