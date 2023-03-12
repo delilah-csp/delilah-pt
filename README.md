@@ -1,14 +1,14 @@
 
 # Delilah Petalinux
 
-This repository contains the Petalinux configurations for Delilah, a computational storage device built for the Daisy OpenSSD.
+This repository contains the Petalinux configurations for Delilah, a Computational Storage Processor (CSP) built for the Daisy OpenSSD.
 
 The configuration relies on Vivado 2019.1 and Petalinux 2019.1. The configuration is a continuation of [Daisy M.2 PCIe 
 MIG](https://github.com/CRZ-Technology/OpenSSD-OpenChannelSSD/tree/main/Daisy/M.2_MIG_PCIe/Daisy_M.2_PCIe_MIG_201901_20210413) by CRZ Technology.
 
 ## Authors
 
-- [@niclashedam](https://www.github.com/niclashedam)
+- [Niclas Hedam](https://www.github.com/niclashedam)
 
 ## License & Funding
 
