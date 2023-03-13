@@ -18,6 +18,8 @@ bar_size = 32 * 1024 * 1024
 bar_high = 0x0
 bar_low = 0x10000000
 
+cma_size = 1024 * 1024 * 1024
+
 dts = "/ {\n"
 dts += "    memory {\n"
 dts += "        device_type = \"memory\";\n"
@@ -49,7 +51,7 @@ for i in range(prog_slots):
         low_counter = low_counter - 0x100000000
         high_counter += 1
 
-for i in range(data_slots + 1): # TODO: right now we add one extra slot, because the last slot seems to have problems
+for i in range(data_slots):
     dts += f"        delilah_d{i}: delilah@d{i} {{\n"
     dts += "            compatible = \"shared-dma-pool\";\n"
     dts += "            reusable;\n" # no-map for DMA, reusable for CMA
@@ -62,8 +64,20 @@ for i in range(data_slots + 1): # TODO: right now we add one extra slot, because
         low_counter = low_counter - 0x100000000
         high_counter += 1
 
-ddr_left_high = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots)) / 0x100000000)
-ddr_left_low = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots)) % 0x100000000)
+dts += "        cma0: cma@0 {\n"
+dts += "            compatible = \"shared-dma-pool\";\n"
+dts += "            reusable;\n"
+dts += f"            reg = <{hex(high_counter)} {hex(low_counter)} 0x0 {hex(cma_size)}>;\n"
+dts += "            linux,cma-default;\n"
+dts += "        };\n\n"
+
+low_counter += cma_size
+if low_counter >= 0x100000000:
+    low_counter = low_counter - 0x100000000
+    high_counter += 1
+
+ddr_left_high = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size) / 0x100000000)
+ddr_left_low = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size) % 0x100000000)
 
 dts += "        ddr_rest {\n"
 dts += f"            reg = <{hex(high_counter)} {hex(low_counter)} {hex(ddr_left_high)} {hex(ddr_left_low)}>;\n"
