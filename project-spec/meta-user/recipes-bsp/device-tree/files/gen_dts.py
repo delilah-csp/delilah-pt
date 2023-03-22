@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import math
 
-prog_slots = 8
+prog_slots = 12
 prog_size = 8 * 1024 * 1024
 
-data_slots = 4
-data_size = 128 * 1024 * 1024
+data_slots = 12
+data_size = 1024 * 1024 * 1024
 
 high_counter = 0x10
 low_counter = 0x0
