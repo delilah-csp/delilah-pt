@@ -19,180 +19,208 @@
         delilah_p0: delilah@p0 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x0 0x0 0x800000>;
+            reg = <0x10 0x0 0x0 0x400000>;
             label = "delilah_p0";
         };
 
         delilah_p1: delilah@p1 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x800000 0x0 0x800000>;
+            reg = <0x10 0x400000 0x0 0x400000>;
             label = "delilah_p1";
         };
 
         delilah_p2: delilah@p2 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x1000000 0x0 0x800000>;
+            reg = <0x10 0x800000 0x0 0x400000>;
             label = "delilah_p2";
         };
 
         delilah_p3: delilah@p3 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x1800000 0x0 0x800000>;
+            reg = <0x10 0xc00000 0x0 0x400000>;
             label = "delilah_p3";
         };
 
         delilah_p4: delilah@p4 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x2000000 0x0 0x800000>;
+            reg = <0x10 0x1000000 0x0 0x400000>;
             label = "delilah_p4";
         };
 
         delilah_p5: delilah@p5 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x2800000 0x0 0x800000>;
+            reg = <0x10 0x1400000 0x0 0x400000>;
             label = "delilah_p5";
         };
 
         delilah_p6: delilah@p6 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x3000000 0x0 0x800000>;
+            reg = <0x10 0x1800000 0x0 0x400000>;
             label = "delilah_p6";
         };
 
         delilah_p7: delilah@p7 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x3800000 0x0 0x800000>;
+            reg = <0x10 0x1c00000 0x0 0x400000>;
             label = "delilah_p7";
         };
 
         delilah_p8: delilah@p8 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x4000000 0x0 0x800000>;
+            reg = <0x10 0x2000000 0x0 0x400000>;
             label = "delilah_p8";
         };
 
         delilah_p9: delilah@p9 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x4800000 0x0 0x800000>;
+            reg = <0x10 0x2400000 0x0 0x400000>;
             label = "delilah_p9";
         };
 
         delilah_p10: delilah@p10 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x5000000 0x0 0x800000>;
+            reg = <0x10 0x2800000 0x0 0x400000>;
             label = "delilah_p10";
         };
 
         delilah_p11: delilah@p11 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x5800000 0x0 0x800000>;
+            reg = <0x10 0x2c00000 0x0 0x400000>;
             label = "delilah_p11";
+        };
+
+        delilah_p12: delilah@p12 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x10 0x3000000 0x0 0x400000>;
+            label = "delilah_p12";
+        };
+
+        delilah_p13: delilah@p13 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x10 0x3400000 0x0 0x400000>;
+            label = "delilah_p13";
+        };
+
+        delilah_p14: delilah@p14 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x10 0x3800000 0x0 0x400000>;
+            label = "delilah_p14";
+        };
+
+        delilah_p15: delilah@p15 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x10 0x3c00000 0x0 0x400000>;
+            label = "delilah_p15";
         };
 
         delilah_d0: delilah@d0 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x6000000 0x0 0x40000000>;
+            reg = <0x10 0x4000000 0x0 0x40000000>;
             label = "delilah_d0";
         };
 
         delilah_d1: delilah@d1 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x46000000 0x0 0x40000000>;
+            reg = <0x10 0x44000000 0x0 0x40000000>;
             label = "delilah_d1";
         };
 
         delilah_d2: delilah@d2 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0x86000000 0x0 0x40000000>;
+            reg = <0x10 0x84000000 0x0 0x40000000>;
             label = "delilah_d2";
         };
 
         delilah_d3: delilah@d3 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x10 0xc6000000 0x0 0x40000000>;
+            reg = <0x10 0xc4000000 0x0 0x40000000>;
             label = "delilah_d3";
         };
 
         delilah_d4: delilah@d4 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x11 0x6000000 0x0 0x40000000>;
+            reg = <0x11 0x4000000 0x0 0x40000000>;
             label = "delilah_d4";
         };
 
         delilah_d5: delilah@d5 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x11 0x46000000 0x0 0x40000000>;
+            reg = <0x11 0x44000000 0x0 0x40000000>;
             label = "delilah_d5";
         };
 
         delilah_d6: delilah@d6 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x11 0x86000000 0x0 0x40000000>;
+            reg = <0x11 0x84000000 0x0 0x40000000>;
             label = "delilah_d6";
         };
 
         delilah_d7: delilah@d7 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x11 0xc6000000 0x0 0x40000000>;
+            reg = <0x11 0xc4000000 0x0 0x40000000>;
             label = "delilah_d7";
         };
 
         delilah_d8: delilah@d8 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x12 0x6000000 0x0 0x40000000>;
+            reg = <0x12 0x4000000 0x0 0x40000000>;
             label = "delilah_d8";
         };
 
         delilah_d9: delilah@d9 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x12 0x46000000 0x0 0x40000000>;
+            reg = <0x12 0x44000000 0x0 0x40000000>;
             label = "delilah_d9";
         };
 
         delilah_d10: delilah@d10 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x12 0x86000000 0x0 0x40000000>;
+            reg = <0x12 0x84000000 0x0 0x40000000>;
             label = "delilah_d10";
         };
 
         delilah_d11: delilah@d11 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x12 0xc6000000 0x0 0x40000000>;
+            reg = <0x12 0xc4000000 0x0 0x40000000>;
             label = "delilah_d11";
         };
 
         cma0: cma@0 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x13 0x6000000 0x0 0x40000000>;
+            reg = <0x13 0x4000000 0x0 0x40000000>;
             linux,cma-default;
         };
 
         ddr_rest {
-            reg = <0x13 0x46000000 0x0 0xba000000>;
+            reg = <0x13 0x44000000 0x0 0xbc000000>;
         };
 
     };
@@ -209,7 +237,7 @@
     udma_p0 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog0";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p0>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -218,7 +246,7 @@
     udma_p1 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog1";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p1>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -227,7 +255,7 @@
     udma_p2 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog2";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p2>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -236,7 +264,7 @@
     udma_p3 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog3";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p3>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -245,7 +273,7 @@
     udma_p4 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog4";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p4>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -254,7 +282,7 @@
     udma_p5 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog5";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p5>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -263,7 +291,7 @@
     udma_p6 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog6";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p6>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -272,7 +300,7 @@
     udma_p7 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog7";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p7>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -281,7 +309,7 @@
     udma_p8 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog8";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p8>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -290,7 +318,7 @@
     udma_p9 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog9";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p9>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -299,7 +327,7 @@
     udma_p10 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog10";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p10>;
         sync-mode = <1>;
         dma-mask = <64>;
@@ -308,8 +336,44 @@
     udma_p11 {
         compatible = "ikwzm,u-dma-buf";
         device-name = "delilah_prog11";
-        size = <0x0 0x800000>;
+        size = <0x0 0x400000>;
         memory-region = <&delilah_p11>;
+        sync-mode = <1>;
+        dma-mask = <64>;
+    };
+
+    udma_p12 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "delilah_prog12";
+        size = <0x0 0x400000>;
+        memory-region = <&delilah_p12>;
+        sync-mode = <1>;
+        dma-mask = <64>;
+    };
+
+    udma_p13 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "delilah_prog13";
+        size = <0x0 0x400000>;
+        memory-region = <&delilah_p13>;
+        sync-mode = <1>;
+        dma-mask = <64>;
+    };
+
+    udma_p14 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "delilah_prog14";
+        size = <0x0 0x400000>;
+        memory-region = <&delilah_p14>;
+        sync-mode = <1>;
+        dma-mask = <64>;
+    };
+
+    udma_p15 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "delilah_prog15";
+        size = <0x0 0x400000>;
+        memory-region = <&delilah_p15>;
         sync-mode = <1>;
         dma-mask = <64>;
     };

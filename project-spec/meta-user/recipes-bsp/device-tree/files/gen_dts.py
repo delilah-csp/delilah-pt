@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import math
 
-prog_slots = 12
-prog_size = 8 * 1024 * 1024
+prog_slots = 16
+prog_size = 4 * 1024 * 1024
 
 data_slots = 12
 data_size = 1024 * 1024 * 1024
