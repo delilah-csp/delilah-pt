@@ -45,6 +45,8 @@ IMAGE_INSTALL = "\
 		pciutils-ids \
 		run-postinsts \
 		udev-extraconf \
+		gdb \
+		gdb-dev \
 		packagegroup-core-boot \
 		packagegroup-core-ssh-dropbear \
 		tcf-agent \
