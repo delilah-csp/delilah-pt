@@ -7,6 +7,7 @@ SRC_URI += "file://bsp.cfg \
             file://user_2019-11-05-20-05-00.cfg \
             file://user_2021-04-16-15-57-00.cfg \
             file://user_2023-02-27-11-41-00.cfg \
+            file://user_2023-04-03-12-55-00.cfg \
             "
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"

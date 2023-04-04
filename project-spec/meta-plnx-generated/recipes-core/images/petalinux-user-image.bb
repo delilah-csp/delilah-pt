@@ -44,6 +44,7 @@ IMAGE_INSTALL = "\
 		libpci \
 		pciutils-ids \
 		run-postinsts \
+		cpufrequtils \
 		udev-extraconf \
 		gdb \
 		gdb-dev \
