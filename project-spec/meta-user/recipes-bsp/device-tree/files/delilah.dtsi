@@ -230,8 +230,8 @@
         device-name = "delilah_bar0";
         size = <0x0 0x2000000>;
         memory-region = <&delilah_bar>;
-        sync-mode = <1>;
-        sync-always;
+	dma-coherent;
+	sync-mode = <3>;
     };
 
     udma_p0 {
