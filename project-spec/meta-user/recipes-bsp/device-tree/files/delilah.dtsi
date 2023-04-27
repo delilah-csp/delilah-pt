@@ -212,15 +212,22 @@
             label = "delilah_d11";
         };
 
+        delilah_s0: delilah@s0 {
+            compatible = "shared-dma-pool";
+            reusable;
+            reg = <0x13 0x4000000 0x0 0x80000000>;
+            label = "delilah_s0";
+        };
+
         cma0: cma@0 {
             compatible = "shared-dma-pool";
             reusable;
-            reg = <0x13 0x4000000 0x0 0x40000000>;
+            reg = <0x13 0x84000000 0x0 0x40000000>;
             linux,cma-default;
         };
 
         ddr_rest {
-            reg = <0x13 0x44000000 0x0 0xbc000000>;
+            reg = <0x13 0xc4000000 0x0 0x3c000000>;
         };
 
     };
@@ -230,8 +237,8 @@
         device-name = "delilah_bar0";
         size = <0x0 0x2000000>;
         memory-region = <&delilah_bar>;
-	dma-coherent;
-	sync-mode = <3>;
+        dma-coherent;
+        sync-mode = <3>;
     };
 
     udma_p0 {
@@ -482,6 +489,15 @@
         device-name = "delilah_data11";
         size = <0x0 0x40000000>;
         memory-region = <&delilah_d11>;
+        sync-mode = <1>;
+        dma-mask = <64>;
+    };
+
+    udma_s0 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "delilah_shared0";
+        size = <0x0 0x80000000>;
+        memory-region = <&delilah_s0>;
         sync-mode = <1>;
         dma-mask = <64>;
     };
