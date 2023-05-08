@@ -2824,7 +2824,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # perf 
 #
-# CONFIG_perf is not set
+CONFIG_perf=y
 # CONFIG_perf-python is not set
 # CONFIG_perf-dbg is not set
 # CONFIG_perf-dev is not set
@@ -4048,7 +4048,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux-benchmarks 
 #
-# CONFIG_packagegroup-petalinux-benchmarks is not set
+CONFIG_packagegroup-petalinux-benchmarks=y
 # CONFIG_packagegroup-petalinux-benchmarks-dbg is not set
 # CONFIG_packagegroup-petalinux-benchmarks-dev is not set
 
