@@ -50,10 +50,12 @@ IMAGE_INSTALL = "\
 		gdb-dev \
 		packagegroup-core-boot \
 		packagegroup-core-ssh-dropbear \
+		perf \
 		tcf-agent \
 		watchdog-init \
 		bridge-utils \
 		hellopm \
+		packagegroup-petalinux-benchmarks \
 		delilah \
 		dimm-test \
 		udmabuf \
