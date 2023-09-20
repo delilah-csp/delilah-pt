@@ -49,6 +49,8 @@ IMAGE_INSTALL = "\
 		gdb \
 		gdb-dev \
 		packagegroup-core-boot \
+		packagegroup-core-buildessential \
+		packagegroup-core-buildessential-dev \
 		packagegroup-core-ssh-dropbear \
 		perf \
 		tcf-agent \
