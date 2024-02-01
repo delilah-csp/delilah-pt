@@ -33726,16 +33726,12 @@
 #define AFIFM1_AFIFM_RDCTRL_OFFSET                                                 0XFD370000
 #undef AFIFM3_AFIFM_RDCTRL_OFFSET 
 #define AFIFM3_AFIFM_RDCTRL_OFFSET                                                 0XFD390000
-#undef AFIFM4_AFIFM_RDCTRL_OFFSET 
-#define AFIFM4_AFIFM_RDCTRL_OFFSET                                                 0XFD3A0000
 #undef AFIFM0_AFIFM_WRCTRL_OFFSET 
 #define AFIFM0_AFIFM_WRCTRL_OFFSET                                                 0XFD360014
 #undef AFIFM1_AFIFM_WRCTRL_OFFSET 
 #define AFIFM1_AFIFM_WRCTRL_OFFSET                                                 0XFD370014
 #undef AFIFM3_AFIFM_WRCTRL_OFFSET 
 #define AFIFM3_AFIFM_WRCTRL_OFFSET                                                 0XFD390014
-#undef AFIFM4_AFIFM_WRCTRL_OFFSET 
-#define AFIFM4_AFIFM_WRCTRL_OFFSET                                                 0XFD3A0014
 
 /*
 * AF_FM0 block level reset
@@ -33865,17 +33861,6 @@
 #define AFIFM3_AFIFM_RDCTRL_FABRIC_WIDTH_MASK                  0x00000003U
 
 /*
-* Configures the Read Channel Fabric interface width. 2'b11 : Reserved 2'b
-    * 10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
-*/
-#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_DEFVAL 
-#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_SHIFT 
-#undef AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_MASK 
-#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
-#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_SHIFT                 0
-#define AFIFM4_AFIFM_RDCTRL_FABRIC_WIDTH_MASK                  0x00000003U
-
-/*
 * Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
     * b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
 */
@@ -33907,17 +33892,6 @@
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT                 0
 #define AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH_MASK                  0x00000003U
-
-/*
-* Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
-    * b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
-*/
-#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL 
-#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT 
-#undef AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_MASK 
-#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_DEFVAL                0x000003B0
-#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_SHIFT                 0
-#define AFIFM4_AFIFM_WRCTRL_FABRIC_WIDTH_MASK                  0x00000003U
 #undef GPIO_MASK_DATA_5_MSW_OFFSET 
 #define GPIO_MASK_DATA_5_MSW_OFFSET                                                0XFF0A002C
 #undef GPIO_DIRM_5_OFFSET 

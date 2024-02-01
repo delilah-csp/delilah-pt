@@ -11,7 +11,7 @@ diff --git a/board/xilinx/zynqmp/zynqmp.c b/board/xilinx/zynqmp/zynqmp.c
 index 58c1c0b4bf..85a5ad8a62 100644
 --- a/board/xilinx/zynqmp/zynqmp.c
 +++ b/board/xilinx/zynqmp/zynqmp.c
-@@ -363,6 +363,40 @@ int board_init(void)
+@@ -388,6 +388,41 @@ int board_init(void)
  	puts("Watchdog: Started\n");
  #endif
  
@@ -47,6 +47,7 @@ index 58c1c0b4bf..85a5ad8a62 100644
 +			}
 +		}
 +#endif
++		mmu_set_region_dcache_behaviour(DDR4_ADDR, DDR4_LEN, DCACHE_WRITEBACK);
 +	}
 +
  	return 0;

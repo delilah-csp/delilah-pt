@@ -103,15 +103,16 @@
 };
 	&amba_pl {
 
-		 ddrdev_0: ddrdev@01000000000 {
+		 ddrdev_0: ddrdev@1000000000 {
 					compatible = "generic-uio";
 					status = "okay";
 					reg = <0x10 0x0 0x4 0x0>;
 		 };
 
-		 ddrdev_1: ddrdev@04800000000 {
-					compatible = "generic-uio";
-					status = "okay";
-					reg = <0x48 0x0 0x4 0x0>;
+
+                 filterdev_1: filterdev@b0000000 {
+                                        compatible = "generic-uio";
+                                        status = "okay";
+					reg = <0x0 0xb0000000 0x0 0x10000>;
 		 };
 	};
