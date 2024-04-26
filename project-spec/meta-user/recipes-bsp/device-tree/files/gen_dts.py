@@ -18,6 +18,7 @@ bar_size = 32 * 1024 * 1024
 bar_high = 0x0
 bar_low = 0x10000000
 
+shared_size = 1024 * 1024 * 1024
 cma_size = 1024 * 1024 * 1024
 
 dts = "/ {\n"
@@ -64,6 +65,18 @@ for i in range(data_slots):
         low_counter = low_counter - 0x100000000
         high_counter += 1
 
+dts += "        delilah_s0: delilah@s0 {\n"
+dts += "            compatible = \"shared-dma-pool\";\n"
+dts += "            reusable;\n" # no-map for DMA, reusable for CMA
+dts += f"            reg = <{hex(high_counter)} {hex(low_counter)} 0x0 {hex(shared_size)}>;\n"
+dts += f"            label = \"delilah_s0\";\n"
+dts += "        };\n\n"
+
+low_counter += shared_size
+if low_counter >= 0x100000000:
+    low_counter = low_counter - 0x100000000
+    high_counter += 1
+
 dts += "        cma0: cma@0 {\n"
 dts += "            compatible = \"shared-dma-pool\";\n"
 dts += "            reusable;\n"
@@ -76,8 +89,8 @@ if low_counter >= 0x100000000:
     low_counter = low_counter - 0x100000000
     high_counter += 1
 
-ddr_left_high = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size) / 0x100000000)
-ddr_left_low = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size) % 0x100000000)
+ddr_left_high = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size - shared_size) / 0x100000000)
+ddr_left_low = math.floor((ddr_size - (data_size * data_slots) - (prog_size * prog_slots) - cma_size - shared_size) % 0x100000000)
 
 dts += "        ddr_rest {\n"
 dts += f"            reg = <{hex(high_counter)} {hex(low_counter)} {hex(ddr_left_high)} {hex(ddr_left_low)}>;\n"
@@ -114,7 +127,17 @@ for i in range(data_slots):
     dts += "        dma-mask = <64>;\n"
     dts += "    };\n\n"
 
+dts += f"    udma_s0 {{\n"
+dts += "        compatible = \"ikwzm,u-dma-buf\";\n"
+dts += f"        device-name = \"delilah_shared0\";\n"
+dts += f"        size = <0x0 {hex(shared_size)}>;\n"
+dts += f"        memory-region = <&delilah_s0>;\n"
+dts += "        sync-mode = <1>;\n"
+dts += "        dma-mask = <64>;\n"
+dts += "    };\n\n"
+
 dts += "};\n"
 
 print(dts)
+
 
